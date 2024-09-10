@@ -10,7 +10,7 @@ import skimage.io as skio
 ssim = sk.metrics.structural_similarity
 
 # name of the input file
-imname = 'data/river.tif'
+imname = 'data/emir.tif'
 
 # read in the image
 im = skio.imread(imname)
@@ -92,12 +92,12 @@ shifted_r = np.roll(r, ar, axis = (0, 1))
 # create a color image
 im_out = np.dstack([shifted_r, shifted_g, b])
 
-# im = sk.exposure.equalize_adapthist(im_out)
+im_out = sk.exposure.equalize_adapthist(im_out)
 
 im_out_uint = (255 * im_out).astype(np.uint8)
 
 # save the image
-fname = 'new images/river.jpg'
+fname = 'new images/emir_contrast.jpg'
 skio.imsave(fname, im_out_uint)
 
 # display the image

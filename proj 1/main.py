@@ -10,7 +10,7 @@ import skimage.io as skio
 ssim = sk.metrics.structural_similarity
 
 # name of the input file
-imname = 'data/train.tif'
+imname = 'data/river.tif'
 
 # read in the image
 im = skio.imread(imname)
@@ -64,7 +64,7 @@ def align(img1, img2, shift = 30):
 def pyramid_align(img1, img2):
     h, w = img1.shape
     exp = int(np.log2(min(h, w) / 100))
-    factor = pow(2, exp)
+    factor = pow(2, max(exp, 0))
     simg1 = sk.transform.downscale_local_mean(img1, (factor, factor))
     simg2 = sk.transform.downscale_local_mean(img2, (factor, factor))
 
@@ -97,7 +97,7 @@ im_out = np.dstack([shifted_r, shifted_g, b])
 im_out_uint = (255 * im_out).astype(np.uint8)
 
 # save the image
-fname = 'new images/train.tif'
+fname = 'new images/river.jpg'
 skio.imsave(fname, im_out_uint)
 
 # display the image

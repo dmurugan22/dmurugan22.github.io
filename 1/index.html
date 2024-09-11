@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Project 1: Images of the Russian Empire</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
+        <title>Project 1: Images of the Russian Empire</title>
         <h1>Colorizing the Prokudin-Gorskii photo collection</h1>
         <section class="description">
             <p>
@@ -85,9 +85,13 @@
             </div>
         </section>
 
+        <h2>Bells and Whistles</h2>
         <section class="description">
             <p>
-                In this section, I showcase some auto-contrasting tools. The main one highlighted 
+                In this section, I showcase some auto-contrasting tools. The first is rescaling intensities,
+                which rescales the pixel values so they range from 0 to 255 rather than just min to max.
+                The next technique is Histogram Equalization which rescales based on the cumulative distribution of
+                pixel values so that pixels with similar values are contrasted more. The final one highlighted 
                 is Adaptive Histogram Equalization, which works by computing local histograms by 
                 different tile regions in the image and using those to enhance the contrast. 
             </p>
@@ -99,16 +103,32 @@
                 <figcaption>Emir (without contrast)</figcaption>
             </div>
             <div class="image-item">
+                <img src="new images/emir_rescale.jpg">
+                <figcaption>Emir (with rescaled intensities)</figcaption>
+            </div>
+            <div class="image-item">
+                <img src="new images/emir_hist.jpg">
+                <figcaption>Emir (with Histogram Equalization)</figcaption>
+            </div>
+            <div class="image-item">
                 <img src="new images/emir_contrast.jpg">
-                <figcaption>Emir (with contrast)</figcaption>
+                <figcaption>Emir (with Adaptive Histogram Equalization)</figcaption>
             </div>
             <div class="image-item">
                 <img src="new images/river.jpg">
                 <figcaption>River (without contrast)</figcaption>
             </div>
             <div class="image-item">
+                <img src="new images/river_rescale.jpg">
+                <figcaption>River (with rescaled intensities)</figcaption>
+            </div>
+            <div class="image-item">
+                <img src="new images/river_hist.jpg">
+                <figcaption>River (with Histogram Equalization)</figcaption>
+            </div>
+            <div class="image-item">
                 <img src="new images/river_contrast.jpg">
-                <figcaption>River (with contrast)</figcaption>
+                <figcaption>River (with Adaptive Histogram Equalizataion)</figcaption>
             </div>
         </section>
     </div>
